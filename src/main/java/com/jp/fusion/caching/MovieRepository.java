@@ -4,14 +4,11 @@ import com.jp.fusion.model.Movie;
 import com.jp.fusion.service.RetrievalService;
 import jakarta.annotation.PostConstruct;
 import lombok.Getter;
-import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.TreeMap;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
@@ -45,7 +42,7 @@ public class MovieRepository {
 
     private void setMovieId(Movie movie) {
         movie.setUUId(UUID.randomUUID().toString());
-        movie.setId("Movie" + "#" + movie.getYear() + "#" + UUID.randomUUID().toString());
+        movie.setId("Movie" + "#" + movie.getYear() + "#" + UUID.randomUUID());
     }
 
     /*

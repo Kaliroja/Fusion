@@ -23,7 +23,7 @@ public class Movie {
     @GeneratedValue(strategy = GenerationStrategy.USE_ATTRIBUTES, delimiter = "#")
     private String id;
 
-    @IdAttribute(order = 0)
+    @IdAttribute
     private Short year;
     private String title;
     private String extract;
